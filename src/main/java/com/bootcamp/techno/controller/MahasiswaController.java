@@ -15,6 +15,11 @@ public class MahasiswaController{
 	public String view2() {
 		return "/kodehive/kampus/kelas/mahasiswa";
 	}
+	
+	@RequestMapping("kodehive/mahasiswa/skripsi")
+	public String viewSkripsi() {
+		return "/kodehive/kampus/skripsi";
+	}
 }
 
 

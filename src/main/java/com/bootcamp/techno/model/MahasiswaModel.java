@@ -23,7 +23,9 @@ public class MahasiswaModel {
 	private String gender;
 	private int spp;
 	private String alamat;
+	private String email;
 	private Date createdData;
+	private String createdBy;
 	
 	public int getId() {
 		return id;
