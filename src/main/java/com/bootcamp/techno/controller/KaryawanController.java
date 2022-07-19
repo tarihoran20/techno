@@ -11,5 +11,6 @@ public class KaryawanController {
 		
 		return "kodehive/company/divisi/karyawan";
 	}
+	
 
 }

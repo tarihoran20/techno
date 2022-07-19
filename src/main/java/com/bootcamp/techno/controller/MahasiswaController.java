@@ -20,6 +20,16 @@ public class MahasiswaController{
 	public String viewSkripsi() {
 		return "/kodehive/kampus/skripsi";
 	}
+	
+	@RequestMapping("kodehive/learn")
+	public String learn() {
+		return "/learn";
+	}
+	
+	@RequestMapping("kodehive/learn_js")
+	public String learnJs() {
+		return "/learn_js";
+	}
 }
 
 
