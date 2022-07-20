@@ -3,68 +3,20 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Learn Java Script</title>
+
 </head>
 <body>
 
 	<h2 id="header1">JavaSCRIPT Page</h2>
-
+	<div id="dom1"></div>
 
 	<!-- <h1 onclick='console.log('COBA')'>HOME Page</h1> -->
 
-	<button id="notice" onclick="alertFunc();">notice</button>
+	<button onclick="alertFunc();">test</button>
+	<button id="notice" onclick="alert(2+2+5)">notice</button>
+	
+	
 
-	<script type="text/javascript">
-
-//DOM
-
-	document.getElementById('header1').innerHTML = '<p> Halo Dunia</p>'
-
-//END DOM
-	var data = 900
-	data = 9
-	var data = "hallo"
-	data = 8
-	console.log("var dtype: " + data)
-	
-	let data1 = 9000;
-	data1 = 300;
-	
-	console.log("let change: " + data1)
-	
-	
-	const data3 = 700;
-	data3 = 10;
-	
-	console.log("const change: " + data3)
-		
-	function alertFunc(){
-		alert("Halo")
-	}
-	
-	function biodata(name, age, address) {
-		//name: 'Agus'
-		//age: 29
-		//address: 'Bantul'
-		console.log(name + ' ' + age + ' ' + address)
-	}
-	
-	biodata('Jijo', 24, 'Bandung')
-	
-	function numb() {
-		return 'Dua'
-	}
-	
-	function numbL() {
-		return 5;
-	}
-	
-	
-	
-	
-</script>
-
-	<script>
-</script>
-
+	<script type="text/javascript" src="../js/learn.js"></script>
 </body>
 </html>

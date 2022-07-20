@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+	
+	#wrapper {
+  width: 30%;
+  margin: 50px auto;
+  padding: 50px;
+  background: #D7FBFF;
+}
+form {
+  margin: 30px auto;
+}
+.textInput {
+  border: none;
+  height: 28px;
+  margin: 2px;
+  border: 1px solid #6B7363;
+  font-size: 1.2em;
+  padding: 5px;
+  width: 95%;
+}
+.textInput:focus {
+  outline: none;
+}
+.btn {
+  width: 98.6%;
+  border: none;
+  margin-top: 5px;
+  color: white;
+  background-color: #3b5998;
+  border-radius: 5px;
+  padding: 12px;
+}
+	
+</style>
+</head>
+<body>
+	<div>Buat Account Baru</div>
+	<hr />
+	<div>
+		<p>
+			For international applicants, please contact our International Office
+			regarding application procedure. This registration form is meant for
+			Indonesian citizen only. <br> Harap menggunakan account lama
+			Anda telah membuat pendaftaran sebelumnya.
+		</p>
+	</div>
+
+	<div>
+		Login
+		<hr />
+	</div>
+
+	<form method="POST" action="" name="vform" onsubmit="Validate()">
+
+		<div>
+			<table>
+				<tr>
+					<td>Username</td>
+					<div id="name_error"></div>
+					<td><input type="text" name="username" id="username"></input></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="pass1" id="pass1"></input></td>
+				</tr>
+				<tr>
+					<td>Ulangi Password</td>
+					<td><input type="text" name="pass2" id="pass2"> </input></td>
+				</tr>
+			</table>
+		</div>
+		<br>
+		<div>Identitas</div>
+		<hr />
+
+		<div>
+			<table>
+				<tr>
+					<td>Nama sesuai identitas</td>
+					<td><input type="text" name="nama_i" id="nama_i"></input></td>
+				</tr>
+				<tr>
+					<td>Nama sesuai ijazah</td>
+					<td><input type="password" name="nama_j" id="nama_j"></input></td>
+				</tr>
+				<tr>
+					<td>Jenis Identitas</td>
+					<td><select>
+							<option value="ktp">KTP</option>
+							<option value="sim">SIM</option>
+							<option value="passp">Passport</option>
+
+							<option value="" selected>--PILIH--</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td>Nomor Identitas</td>
+					<td><input type="text" name="ident" id="ident"></input></td>
+
+				</tr>
+				<tr>
+					<td>Kewarganegaraan</td>
+					<td><select>
+							<option value="wni">WNI</option>
+							<option value="wna">WNA</option>
+
+							<option value="" selected>--PILIH--</option>
+					</select></td>
+				</tr>
+			</table>
+		</div>
+		<div>
+			<input type="submit" name="register" value="Register" class="btn">
+		</div>
+	</form>
+
+	<script type="text/javascript">
+
+// SELECTING ALL TEXT ELEMENTS
+var username = document.forms['vform']['username'];
+var email = document.forms['vform']['email'];
+var password = document.forms['vform']['password'];
+var password_confirm = document.forms['vform']['password_confirm'];
+// SELECTING ALL ERROR DISPLAY ELEMENTS
+var name_error = document.getElementById('name_error');
+var email_error = document.getElementById('email_error');
+var password_error = document.getElementById('password_error');
+// SETTING ALL EVENT LISTENERS
+username.addEventListener('blur', nameVerify, true);
+email.addEventListener('blur', emailVerify, true);
+password.addEventListener('blur', passwordVerify, true);
+// validation function
+function Validate() {
+  // validate username
+  if (username.value == "") {
+    username.style.border = "1px solid red";
+    document.getElementById('username_div').style.color = "red";
+    name_error.textContent = "Username is required";
+    username.focus();
+    return false;
+  }
+  // validate username
+  if (username.value.length < 3) {
+    username.style.border = "1px solid red";
+    document.getElementById('username_div').style.color = "red";
+    name_error.textContent = "Username must be at least 3 characters";
+    username.focus();
+    return false;
+  }
+  // validate email
+  if (email.value == "") {
+    email.style.border = "1px solid red";
+    document.getElementById('email_div').style.color = "red";
+    email_error.textContent = "Email is required";
+    email.focus();
+    return false;
+  }
+  // validate password
+  if (password.value == "") {
+    password.style.border = "1px solid red";
+    document.getElementById('password_div').style.color = "red";
+    password_confirm.style.border = "1px solid red";
+    password_error.textContent = "Password is required";
+    password.focus();
+    return false;
+  }
+  // check if the two passwords match
+  if (password.value != password_confirm.value) {
+    password.style.border = "1px solid red";
+    document.getElementById('pass_confirm_div').style.color = "red";
+    password_confirm.style.border = "1px solid red";
+    password_error.innerHTML = "The two passwords do not match";
+    return false;
+  }
+}
+// event handler functions
+function nameVerify() {
+  if (username.value != "") {
+   username.style.border = "1px solid #5e6e66";
+   document.getElementById('username_div').style.color = "#5e6e66";
+   name_error.innerHTML = "";
+   return true;
+  }
+}
+function emailVerify() {
+  if (email.value != "") {
+  	email.style.border = "1px solid #5e6e66";
+  	document.getElementById('email_div').style.color = "#5e6e66";
+  	email_error.innerHTML = "";
+  	return true;
+  }
+}
+function passwordVerify() {
+  if (password.value != "") {
+  	password.style.border = "1px solid #5e6e66";
+  	document.getElementById('pass_confirm_div').style.color = "#5e6e66";
+  	document.getElementById('password_div').style.color = "#5e6e66";
+  	password_error.innerHTML = "";
+  	return true;
+  }
+  if (password.value === password_confirm.value) {
+  	password.style.border = "1px solid #5e6e66";
+  	document.getElementById('pass_confirm_div').style.color = "#5e6e66";
+  	password_error.innerHTML = "";
+  	return true;
+  }
+}
+
+
+</script>
+</body>
+</html>
