@@ -1,5 +1,3 @@
-
-
 //DOM
 
 document.getElementById('header1').innerHTML = '<p> Halo Dunia</p>'
@@ -12,20 +10,6 @@ document.write(a1 === a2)
 
 document.write('<br> Operator == ')
 document.write(a1 == a2)
-
-var myHobby = {
-	hoby: "football",
-	func: function() {
-		var self = this;
-		document.write("outer: " + this.hoby + "<br />")
-		document.write("outer: " + self.hoby + "<br />")
-			(function() {
-				document.write("inner: " + this.hoby + "<br />")
-				document.write("inner: " + self.hoby + "<br />")
-			})
-	}
-}
-
 
 //END DOM
 
@@ -185,7 +169,7 @@ function toko(produk, jumlah, harga) {
 	pembeli.produk = produk
 	pembeli.jumlah = jumlah
 	pembeli.harga = harga
-	
+
 	return pembeli
 }
 
@@ -205,10 +189,29 @@ function tokoBangunan(produk, jumlah, harga) {
 	this.harga = harga
 }
 
-tokoBangunan.prototype.stok = function(jumlah) {
-	var result = jumlah * this.harga
-	return result
+const person = {
+	name: 'Reymond',
+	pet: {
+		name: 'Rey'
+	}
+}
+document.write('<br>' + person.pet.name)
+
+
+function foo1() {
+	return {
+		salam: "Hai"
+	}
+}
+document.write(foo1().salam)
+console.log(foo1())
+
+function foo2() {
+	return 
+	{
+		salam: "Hai"
+	}
 }
 
-var pembeli3 = new tokoBangunan("permen", 12, 1000)
-var supervisor = new tokoBangunan("permen", 12, 1000)
+console.log(foo2())
+document.write(foo2().salam)

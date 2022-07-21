@@ -45,4 +45,19 @@ public class MahasiswaController {
 	public String registration2() {
 		return "/registration2";
 	}
+	
+	@RequestMapping("kodehive/learn_jquery")
+	public String learnJquery() {
+		return "/learn_jquery";
+	}
+	
+	@RequestMapping("kodehive/jqueryQuiz1No5")
+	public String quiz1No5() {
+		return "/kodehive/jqueryQuiz1No5";
+	}
+	
+	@RequestMapping("kodehive/jqueryQuiz1No6")
+	public String quiz1No6() {
+		return "/kodehive/jqueryQuiz1No6";
+	}
 }
