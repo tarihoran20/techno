@@ -4,8 +4,15 @@
 <meta charset="ISO-8859-1">
 <title>Registration Page</title>
 <style type="text/css">
+h3 {
+	color: red;
+	font-size: 12px;
+	display: none;
+}
 
-	
+#alertRepPass {
+	font-size: 10px;
+}
 </style>
 </head>
 <body>
@@ -32,15 +39,30 @@
 				<tr>
 					<td>Username</td>
 					<td><input type="text" id="username" value=""></input></td>
-					<td><h3 id="valUser" style="color: red; font-size: 12px; display: none">Perlu isi username dulu</h3></td>
+					<td>
+						<h3 id="valUser1">Username tidak boleh kosong</h3>
+						<h3 id="valUser2">
+							Username harus Alfabet, Numerik, dan "_" <br>Username tidak
+							boleh mengandung spasi
+						</h3>
+					</td>
 				</tr>
 				<tr>
 					<td>Password</td>
-					<td><input type="password" name="pass1" id="pass1"></input></td>
+					<td><input type="password" id="password" value=""></input></td>
+					<td>
+						<h3 id="alertPass">Password tidak boleh kosong</h3>
+						<h3 id="alertPass2">Password minimal 6 karakter</h3>
+					</td>
 				</tr>
 				<tr>
 					<td>Ulangi Password</td>
-					<td><input type="text" name="pass2" id="pass2"> </input></td>
+					<td><input type="password" id="repPassword" value=""></input></td>
+					<td>
+						<h3 id="alertRepPass">
+							Password tidak sama<br>*case sensitive
+						</h3>
+					</td>
 				</tr>
 			</table>
 		</div>
@@ -52,11 +74,14 @@
 			<table>
 				<tr>
 					<td>Nama sesuai identitas</td>
-					<td><input type="text" name="nama_i" id="nama_i"></input></td>
+					<td><input type="text" id="namaIdentitas" value=""></input></td>
+					<td>
+						<h3 id="alertNamaIdentitas">Nama sesuai identitas harus diisi</h3>
+					</td>
 				</tr>
 				<tr>
 					<td>Nama sesuai ijazah</td>
-					<td><input type="password" name="nama_j" id="nama_j"></input></td>
+					<td><input type="text" name="nama_j" id="nama_j"></input></td>
 				</tr>
 				<tr>
 					<td>Jenis Identitas</td>
@@ -80,11 +105,10 @@
 							<option value="wna">WNA</option>
 
 							<option value="" selected>--PILIH--</option>
-				</select></td>
+					</select></td>
 				</tr>
 				<tr>
-					<td>
-					<input type="button" onchange="validate();" value="login"/>
+					<td><input type="button" onchange="validate();" value="login" />
 					</td>
 				</tr>
 			</table>

@@ -1,20 +1,33 @@
 package com.bootcamp.techno.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.bootcamp.techno.service.IMahasiswaService;
+import com.bootcamp.techno.service.ISkripsiService;
+import com.bootcamp.techno.service.impl.MahasiswaService;
+import com.bootcamp.techno.model.MahasiswaModel;
 
 @Controller
 public class MahasiswaController {
+	@Autowired
+	IMahasiswaService mahasiswaService;
 
 	@RequestMapping()
 	public String view() {
 		return "/home";
 	}
 
-	@RequestMapping("kodehive/mahasiswa")
-	public String view2() {
-		return "/kodehive/kampus/kelas/mahasiswa";
-	}
+//	@RequestMapping("kodehive/mahasiswa")
+//	public String view2() {
+//		return "/kodehive/kampus/kelas/mahasiswa";
+//	}
 
 	@RequestMapping("kodehive/mahasiswa/skripsi")
 	public String viewSkripsi() {
@@ -60,4 +73,39 @@ public class MahasiswaController {
 	public String quiz1No6() {
 		return "/kodehive/jqueryQuiz1No6";
 	}
+	
+//	@RequestMapping("kodehive/mahasiswa")
+//	public String mahasiswa() {
+//		return "/kodehive/mahasiswa";
+//	}
+	
+	@RequestMapping("kodehive/mahasiswa/list")
+	public String mahasiswaList(Model model) {
+		List<MahasiswaModel> mahasiswaModelList = new ArrayList<MahasiswaModel>();
+		mahasiswaModelList = mahasiswaService.readAllData();
+		//System.out.println(mahasiswaModelList);
+		
+		model.addAttribute("mahasiswa", mahasiswaModelList);
+		return "mahasiswa/list";
+	}
+	
+	@RequestMapping("kodehive/mahasiswa/add")
+	public String mahasiswaAddModal() {
+		
+		return "/mahasiswa/add";
+	}
+	
+	@RequestMapping("kodehive/mahasiswa/create")
+	public String mahasiswaCreate(@RequestBody MahasiswaModel model) {
+		MahasiswaModel mahasiswaModel = new MahasiswaModel();
+		mahasiswaModel.setName(model.getName());
+		mahasiswaModel.setGender(model.getGender());
+		mahasiswaModel.setSpp(model.getSpp());
+		mahasiswaModel.setAlamat(model.getAlamat());
+		
+		mahasiswaService.Insert(mahasiswaModel);
+		
+		return "/mahasiswa/home";
+	}
+	
 }
