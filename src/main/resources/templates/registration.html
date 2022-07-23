@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Registration Page</title>
-<style type="text/css">
-h3 {
-	color: red;
-	font-size: 12px;
-	display: none;
-}
 
-#alertRepPass {
-	font-size: 10px;
-}
-</style>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Registration Page</title>
+	<style type="text/css">
+		h3 {
+			color: red;
+			font-size: 10px;
+			display: none;
+		}
+
+		#alertRepPass {
+			font-size: 10px;
+		}
+
+		#info {
+			color: gray;
+			font-size: small;
+		}
+		
+		#judul {
+			color: gray;
+		}
+	</style>
 </head>
+
 <body>
-	<div>Buat Account Baru</div>
+	<div id="judul">Buat Account Baru</div>
 	<hr />
 	<div>
 		<p>
@@ -27,97 +38,121 @@ h3 {
 		</p>
 	</div>
 
-	<div>
+	<div id="judul">
 		Login
 		<hr />
 	</div>
+	<div>
+		<form method="POST" action="" name="vform" onchange="validate();">
 
-	<form method="POST" action="" name="vform" onchange="validate();">
+			<div>
+				<table>
+					<tr>
+						<td>Username</td>
+						<td>
+							<h3 id="valUser1">Username tidak boleh kosong</h3>
+							<h3 id="valUser2">Username harus Alfabet, Numerik, dan "_" <br>Username tidak boleh
+								mengandung spasi</h3>
+							<input type="text" id="username" value=""></input>
+							<div id="info">Username yang anda inginkan hanya dapat terdiri dari huruf, angka, dan _.
+								Username tidak
+								boleh mengandung spasi</div>
+						</td>
 
-		<div>
-			<table>
-				<tr>
-					<td>Username</td>
-					<td><input type="text" id="username" value=""></input></td>
-					<td>
-						<h3 id="valUser1">Username tidak boleh kosong</h3>
-						<h3 id="valUser2">
-							Username harus Alfabet, Numerik, dan "_" <br>Username tidak
-							boleh mengandung spasi
-						</h3>
-					</td>
-				</tr>
-				<tr>
-					<td>Password</td>
-					<td><input type="password" id="password" value=""></input></td>
-					<td>
-						<h3 id="alertPass">Password tidak boleh kosong</h3>
-						<h3 id="alertPass2">Password minimal 6 karakter</h3>
-					</td>
-				</tr>
-				<tr>
-					<td>Ulangi Password</td>
-					<td><input type="password" id="repPassword" value=""></input></td>
-					<td>
-						<h3 id="alertRepPass">
-							Password tidak sama<br>*case sensitive
-						</h3>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<br>
-		<div>Identitas</div>
-		<hr />
+					</tr>
+					<tr>
+						<td>Password</td>
+						<td>
+							<h3 id="alertPass">Password tidak boleh kosong</h3>
+							<h3 id="alertPass2">Password minimal 6 karakter</h3>
+							<input type="password" id="password" value=""></input>
+							<div id="info">Masukkan password. Password minimal terdiri dari 6 karakter dan case
+								sensitive (A beda dengan a)</div>
+						</td>
+					</tr>
+					<tr>
+						<td>Ulangi Password</td>
+						<td>
+							<h3 id="alertRepPass">Password tidak boleh kosong/Password tidak sama *case sensitive</h3>
+							<input type="password" id="repPassword" value=""></input>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br>
+			<div id="judul">Identitas</div>
+			<hr />
 
-		<div>
-			<table>
-				<tr>
-					<td>Nama sesuai identitas</td>
-					<td><input type="text" id="namaIdentitas" value=""></input></td>
-					<td>
-						<h3 id="alertNamaIdentitas">Nama sesuai identitas harus diisi</h3>
-					</td>
-				</tr>
-				<tr>
-					<td>Nama sesuai ijazah</td>
-					<td><input type="text" name="nama_j" id="nama_j"></input></td>
-				</tr>
-				<tr>
-					<td>Jenis Identitas</td>
-					<td><select>
-							<option value="ktp">KTP</option>
-							<option value="sim">SIM</option>
-							<option value="passp">Passport</option>
+			<div>
+				<table>
+					<tr>
+						<td>Nama sesuai identitas</td>
+						<td>
+							<h3 id="alertNamaIdentitas">Nama sesuai identitas harus diisi</h3>
+							<input type="text" id="namaIdentitas" value=""></input>
+							<div id="info">
+								Nama sesuai yang tertulis di kartu identitas, tanpa gelar akademis/sertifikasi
+								<br>Kata pada nama diawali dengan huruf kapital, contoh benar: Abc Def, contoh salah:
+								abc def,
+								ABC DEF
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>Nama sesuai ijazah</td>
+						<td>
+							<h3 id="alertNamaIjazah">Nama sesuai ijazah harus diisi</h3>
+							<input type="text" id="namaIjazah"></input>
+							<div id="info">
+								Nama sesuai yang tertulis di ijazah, tanpa gelar akademis/sertifikasi
+								<br>Kata pada nama diawali dengan huruf kapital, contoh benar: Abc Def, contoh salah:
+								abc def, ABC DEF
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>Jenis Identitas</td>
+						<td>
+							<h3 id="alertJenisIdentitas">Anda belum memilih jenis identitas</h3>
+							<select id="jenisIdentitas">
+								<option value="ktp">KTP</option>
+								<option value="sim">SIM</option>
+								<option value="passp">Passport</option>
 
-							<option value="" selected>--PILIH--</option>
-					</select></td>
-				</tr>
-				<tr>
-					<td>Nomor Identitas</td>
-					<td><input type="text" name="ident" id="ident"></input></td>
+								<option value="" selected>--PILIH--</option>
+							</select>
+							<div id="info"> Pilih jenis identitas Anda. Identitas harus dibawa ketika ujian/daftar
+								ulang.</div>
+						</td>
+					</tr>
+					<tr>
+						<td>Nomor Identitas</td>
+						<td>
+						<h3 id="alertNoIdentitas">Nomor identitas harus diisi</h3>
+						<input type="text" id="noIdentitas" value=""></input>
+						</td>
+					</tr>
+					<tr>
+						<td>Kewarganegaraan</td>
+						<td>
+							<h3 id="alertKewarganegaraan">Kewarganegaraan harus diisi</h3>
+							<select id="kewarganegaraan">
+								<option value="wni">WNI</option>
+								<option value="wna">WNA</option>
 
-				</tr>
-				<tr>
-					<td>Kewarganegaraan</td>
-					<td><select>
-							<option value="wni">WNI</option>
-							<option value="wna">WNA</option>
-
-							<option value="" selected>--PILIH--</option>
-					</select></td>
-				</tr>
-				<tr>
-					<td><input type="button" onchange="validate();" value="login" />
-					</td>
-				</tr>
-			</table>
-		</div>
-	</form>
+								<option value="" selected>--PILIH--</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</form>
+	</div>
 
 	<script type="text/javascript" src="../js/registration.js">
 
 
-</script>
+	</script>
 </body>
+
 </html>

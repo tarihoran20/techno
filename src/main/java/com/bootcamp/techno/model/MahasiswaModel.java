@@ -61,6 +61,14 @@ public class MahasiswaModel {
 		// TODO Auto-generated method stub
 		
 	}
+	public void setCreatedBy(String currentUserFromLogin) {
+		// TODO Auto-generated method stub
+		
+	}
+	public String getEmail() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 
