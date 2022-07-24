@@ -22,5 +22,49 @@ public class PasienModel {
 	private String kategoriPasien;
 	private int biayaPasien;
 	private String tanggalLahir;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getNomorPasien() {
+		return nomorPasien;
+	}
+	public void setNomorPasien(int nomorPasien) {
+		this.nomorPasien = nomorPasien;
+	}
+	public String getNamaPasien() {
+		return namaPasien;
+	}
+	public void setNamaPasien(String namaPasien) {
+		this.namaPasien = namaPasien;
+	}
+	public String getGenderPasien() {
+		return genderPasien;
+	}
+	public void setGenderPasien(String genderPasien) {
+		this.genderPasien = genderPasien;
+	}
+	public String getKategoriPasien() {
+		return kategoriPasien;
+	}
+	public void setKategoriPasien(String kategoriPasien) {
+		this.kategoriPasien = kategoriPasien;
+	}
+	public int getBiayaPasien() {
+		return biayaPasien;
+	}
+	public void setBiayaPasien(int biayaPasien) {
+		this.biayaPasien = biayaPasien;
+	}
+	public String getTanggalLahir() {
+		return tanggalLahir;
+	}
+	public void setTanggalLahir(String tanggalLahir) {
+		this.tanggalLahir = tanggalLahir;
+	}
+	
+	
 
 }

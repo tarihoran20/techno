@@ -9,8 +9,7 @@ public class PaseinController {
 		
 		@RequestMapping("/pasien")
 		public String pasien() {
-			String html = "/kodehive/rumah_sakit/pasien";
-			return html;
+			return "/kodehive/rumah_sakit/pasien";
 		
 
 	}

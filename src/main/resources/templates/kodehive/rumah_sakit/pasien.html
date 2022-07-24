@@ -1,44 +1,59 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Pasien Page</title>
+	<meta charset="ISO-8859-1">
+	<title>Pasien Page</title>
 </head>
+
 <body>
-Halaman Pasien
-<br><br>
+	Halaman Pasien
+	<br><br>
 
-<table border = 1>
-<tr>
-	<td>Nomor Pasien</td>
-	<td> *input </td>
-</tr>
-<tr>
-	<td>Nama Pasien</td>
-	<td> *input </td>
-</tr>
-<tr>
-	<td>Gender Pasien</td>
-	<td> *input </td>
-</tr>
-<tr>
-	<td>Kategori Pasien</td>
-	<td> *input </td>
-</tr>
-<tr>
-	<td>Biaya Pasien</td>
-	<td> *input </td>
-</tr>
-<tr>
-	<td>Tanggal Lahir</td>
-	<td> *input </td>
-</tr>
-<tr>
-	<td>Submit</td>
-	<td>Reset</td>
-</tr>
+	<table>
+		<tr>
+			<td>Nomor Pasien</td>
+			<td>: <input type="text"></input> </td>
+		</tr>
+		<tr>
+			<td>Nama Pasien</td>
+			<td>: <input type="text"></input></td>
+		</tr>
+		<tr>
+			<td>Gender Pasien</td>
+			<td>:
+				<input type="radio" value="pria"> <label for="pria">Pria</label>
+				<input type="radio" value="wanita"> <label for="wanita">Wanita</label>
+			</td>
+		</tr>
+		<tr>
+			<td>Kategori Pasien</td>
+			<td>: 
+				<select id="">
+					<option value="">BPJS</option>
+					<option value="">Asurasni</option>
+					<option value="">Pribadi</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Biaya Pasien</td>
+			<td>: <input type="text"> </input> </td>
+		</tr>
+		<tr>
+			<td>Tanggal Lahir</td>
+			<td>: <input type="date"> </input> </td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>&nbsp;
+			<input type="submit" value="Submit"></input>
+			<input type="reset" value="Reset"></input>
+			</td>
+		</tr>
 
-</table>
+	</table>
 
 </body>
+
 </html>
