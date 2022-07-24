@@ -16,6 +16,8 @@ Springboot Quiz - Model - No 1
 -----------------------------------------------------------------------------------------------------------------------------
 
 Springboot Quiz - Model - No 2
+
+
 -- Database
 ![database](https://user-images.githubusercontent.com/51877867/180657676-06f43fd1-7cf2-4300-8e67-6dd04b9fb307.png)
 
