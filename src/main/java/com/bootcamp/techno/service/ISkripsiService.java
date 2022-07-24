@@ -13,7 +13,11 @@ public interface ISkripsiService{
 	
 	public List<SkripsiModel> readAllData();
 	public List<SkripsiModel> readLessThanYear();
-	public List<SkripsiModel> searchYear(int year);
+	public List<SkripsiModel> notMoreThanYear(int year);
+	public List<SkripsiModel> searchWord(String word); 
+	public List<SkripsiModel> yearAndScore(int year, double score);
+	public List<SkripsiModel> notYear(int year);
+	public List<SkripsiModel> notStartLetter(char letter);
 	public int deleteById(int id);
 	public int editById(SkripsiModel model, int id);
 

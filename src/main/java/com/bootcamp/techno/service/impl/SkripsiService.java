@@ -32,9 +32,14 @@ public class SkripsiService implements ISkripsiService{
 
 	}
 
+//	@Override
+//	public List<SkripsiModel> searchYear(int year) {
+//		return skripsiRepository.searchYear(year);
+//	}
+	
 	@Override
-	public List<SkripsiModel> searchYear(int year) {
-		return skripsiRepository.searchYear(year);
+	public List<SkripsiModel> notMoreThanYear(int year) {
+		return skripsiRepository.notMoreThanYear(year);
 	}
 	
 	@Override
@@ -45,6 +50,26 @@ public class SkripsiService implements ISkripsiService{
 	@Override
 	public int editById(SkripsiModel model, int id) {
 		return skripsiRepository.editById(model, id);
+	}
+
+	@Override
+	public List<SkripsiModel> searchWord(String word) {
+		return skripsiRepository.searchWord(word);
+	}
+
+	@Override
+	public List<SkripsiModel> yearAndScore(int year, double score) {
+		return skripsiRepository.yearAndScore(year, score);
+	}
+
+	@Override
+	public List<SkripsiModel> notYear(int year) {
+		return skripsiRepository.notYear(year);
+	}
+
+	@Override
+	public List<SkripsiModel> notStartLetter(char letter) {
+		return skripsiRepository.notStartLetter(letter);
 	}
 
 
